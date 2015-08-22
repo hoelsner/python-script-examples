@@ -1,0 +1,52 @@
+switch-1001#sh inventory
+NAME: "1", DESCR: "WS-C2960-24TT-L"
+PID: WS-C2960-24TT-L   , VID: V09  , SN: 12345ABCD
+---------------------------------------------------------------------------------------------------
+switch-1002#sh inventory
+NAME: "1", DESCR: "WS-C2960-48TT-L"
+PID: WS-C2960-48TT-L   , VID: V02  , SN: 12345ABCD
+---------------------------------------------------------------------------------------------------
+switch-2001#sh inventory
+NAME: "1", DESCR: "WS-C3750X-24"
+PID: WS-C3750X-24T-S   , VID: V04  , SN: 12345ABCD
+NAME: "Switch 1 - Power Supply 0", DESCR: "FRU Power Supply"
+PID: C3KX-PWR-350WAC   , VID: V02  , SN: 12345ABCD
+NAME: "Switch 1 - FRULink Slot 1 - FRULink Module", DESCR: "FRULink 1G Module"
+PID: C3KX-NM-1G        , VID: V01  , SN: 12345ABCD
+NAME: "GigabitEthernet1/1/1", DESCR: "1000BaseLX SFP"
+PID: Unspecified       , VID:      , SN: 12345ABCD     
+NAME: "2", DESCR: "WS-C3750X-24"
+PID: WS-C3750X-24T-S   , VID: V04  , SN: 12345ABCD
+NAME: "Switch 2 - Power Supply 0", DESCR: "FRU Power Supply"
+PID: C3KX-PWR-350WAC   , VID: V02  , SN: 12345ABCD
+NAME: "Switch 2 - FRULink Slot 1 - FRULink Module", DESCR: "FRULink 1G Module"
+PID: C3KX-NM-1G        , VID: V01  , SN: 12345ABCD
+NAME: "GigabitEthernet2/1/1", DESCR: "1000BaseLX SFP"
+PID: Unspecified       , VID:      , SN: 12345ABCD     
+NAME: "3", DESCR: "WS-C3750X-24"
+PID: WS-C3750X-24T-S   , VID: V04  , SN: 12345ABCD
+NAME: "Switch 3 - Power Supply 0", DESCR: "FRU Power Supply"
+PID: C3KX-PWR-350WAC   , VID: V02  , SN: 12345ABCD
+NAME: "Switch 3 - FRULink Slot 1 - FRULink Module", DESCR: "FRULink 1G Module"
+PID: C3KX-NM-1G        , VID: V01  , SN: 12345ABCD
+NAME: "GigabitEthernet3/1/1", DESCR: "1000BaseLX SFP"
+PID: Unspecified       , VID:      , SN: 12345ABCD     
+NAME: "4", DESCR: "WS-C3750X-24"
+PID: WS-C3750X-24T-S   , VID: V04  , SN: 12345ABCD
+NAME: "Switch 4 - Power Supply 0", DESCR: "FRU Power Supply"
+PID: C3KX-PWR-350WAC   , VID: V02  , SN: 12345ABCD
+NAME: "Switch 4 - FRULink Slot 1 - FRULink Module", DESCR: "FRULink 1G Module"
+PID: C3KX-NM-1G        , VID: V01  , SN: 12345ABCD
+NAME: "GigabitEthernet4/1/1", DESCR: "1000BaseLX SFP"
+PID: Unspecified       , VID:      , SN: 12345ABCD     
+---------------------------------------------------------------------------------------------------
+switch-2002#sh inventory
+NAME: "1", DESCR: "WS-C3560G-24TS"
+PID: WS-C3560G-24TS-S  , VID: V03, SN: 12345ABCD
+NAME: "GigabitEthernet0/25", DESCR: "1000BaseSX SFP"
+PID:                     , VID:     , SN: 12345ABCD         
+NAME: "GigabitEthernet0/27", DESCR: "1000BaseSX SFP"
+PID:                     , VID:     , SN: 12345ABCD         
+NAME: "GigabitEthernet0/28", DESCR: "1000BaseSX SFP"
+PID:                     , VID:     , SN: 12345ABCD         
+---------------------------------------------------------------------------------------------------
