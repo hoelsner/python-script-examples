@@ -1,0 +1,78 @@
+[
+  {
+    "hostname": "switch-a",
+    "domain_name": "domain.local",
+    "management_ip": "10.0.0.1",
+    "vlans": [
+      {
+        "name": "Data",
+        "id": 100
+      },
+      {
+        "name": "Voice",
+        "id": 200
+      },
+      {
+        "name": "Server",
+        "id": 300
+      }
+    ]
+  },
+  {
+    "hostname": "switch-b",
+    "domain_name": "domain.local",
+    "management_ip": "10.0.0.2",
+    "vlans": [
+      {
+        "name": "Data",
+        "id": 100
+      },
+      {
+        "name": "Voice",
+        "id": 200
+      },
+      {
+        "name": "Server",
+        "id": 300
+      }
+    ]
+  },
+  {
+    "hostname": "switch-c",
+    "domain_name": "domain.local",
+    "management_ip": "10.0.0.3",
+    "vlans": [
+      {
+        "name": "Data",
+        "id": 100
+      },
+      {
+        "name": "Voice",
+        "id": 200
+      },
+      {
+        "name": "Server",
+        "id": 300
+      }
+    ]
+  },
+  {
+    "hostname": "switch-d",
+    "domain_name": "domain.local",
+    "management_ip": "10.0.0.4",
+    "vlans": [
+      {
+        "name": "Data",
+        "id": 100
+      },
+      {
+        "name": "Voice",
+        "id": 200
+      },
+      {
+        "name": "Server",
+        "id": 300
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+!
+! Just a simple Cisco IOS configuration
+!
+hostname {{ hostname }}
+!
+ip domain-name {{ domain_name }}
+!
+interface Loopback0
+ description Management Interface
+ ip address {{ management_ip }} 255.255.255.255
+!
+interface FastEthernet 0/0
+ description external interface
+ ip address dhcp
+!
+{% for vlan in vlans %}
+vlan {{ vlan.id }}
+ name {{ vlan.name }}
+{% endfor %}
+!

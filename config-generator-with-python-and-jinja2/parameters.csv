@@ -1,0 +1,5 @@
+hostname;domain_name;management_ip
+switch-a;domain.local;10.0.0.1
+switch-b;domain.local;10.0.0.2
+switch-c;domain.local;10.0.0.3
+switch-d;domain.local;10.0.0.4
