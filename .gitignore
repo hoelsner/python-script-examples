@@ -122,3 +122,4 @@ target/
 
 outfile.csv
 _*
+.vagrant

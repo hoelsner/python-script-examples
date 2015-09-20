@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  gather_facts: False
+  tasks:
+  - name: Install packages required to run the examples
+    apt: pkg={{item}} state=installed
+    sudo: true
+    with_items:
+         - python3.4
+         - python3-pip
+         - ansible
+         - git
+  # clone python3 compatible textfsm-fork
+  - name: clone textfsm repository form Github
+    git: repo=https://github.com/jonathanslenders/textfsm.git dest=/home/vagrant/github/textfsm accept_hostkey=yes
+  - name: install textfsm
+    shell: python3 setup.py install
+      chdir=/home/vagrant/github/textfsm
+    sudo: true
+  - name: install other python requirements form the examples repository
+    sudo: true
+    pip: requirements=/vagrant/requirements.txt executable=pip3
+  # create a symlink in the home directory to the shared directory
+  - name: create 'example' link
+    file: src=/vagrant dest=/home/vagrant/examples owner=vagrant group=vagrant state=link
