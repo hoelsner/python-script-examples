@@ -1,0 +1,24 @@
+!
+{% for interface in interfaces %}
+{% set vlan_name = interface.name|slugify_string %}
+{% if vendor == "Cisco_IOS" %}
+{% set subnet_mask = interface.prefix_length|dotted_decimal  %}
+vlan {{ interface.vlan_id }}
+ name {{ vlan_name }}
+interface vlan{{ interface.vlan_id }}
+ description *** IP interface for {{ interface.name }} (VLAN {{ interface.vlan_id }})
+ ip address {{ interface.ip_address }} {{ subnet_mask }}
+!
+{% elif vendor == "Juniper" %}
+set vlans {{ vlan_name }} vlan-id {{ interface.vlan_id }}
+edit interfaces vlan unit {{ interface.vlan_id }}
+set family inet address {{ interface.ip_address }}/{{ interface.prefix_length }}
+set description "*** IP interface for {{ interface.name }} (VLAN {{ interface.vlan_id }})"
+top
+set vlans {{ vlan_name }} l3-interface vlan.{{ interface.vlan_id }}
+!
+{% else %}
+! WARNING: UNKNOWN VENDOR
+{% endif %}
+{% endfor %}
+!

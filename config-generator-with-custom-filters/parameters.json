@@ -1,0 +1,34 @@
+{
+  "interfaces": [
+    {
+      "vlan_id": 10,
+      "ip_address": "10.0.10.1",
+      "prefix_length": 24,
+      "name": "Data VLAN"
+    },
+    {
+      "vlan_id": 20,
+      "ip_address": "10.0.20.1",
+      "prefix_length": 24,
+      "name": "Voice VLAN"
+    },
+    {
+      "vlan_id": 30,
+      "ip_address": "10.0.30.1",
+      "prefix_length": 24,
+      "name": "Server VLAN"
+    },
+    {
+      "vlan_id": 40,
+      "ip_address": "10.0.40.1",
+      "prefix_length": 24,
+      "name": "Management VLAN"
+    },
+    {
+      "vlan_id": 50,
+      "ip_address": "10.0.50.1",
+      "prefix_length": 24,
+      "name": "transit VLAN to CE router"
+    }
+  ]
+}
