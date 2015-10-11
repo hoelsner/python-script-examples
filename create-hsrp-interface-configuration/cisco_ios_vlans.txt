@@ -1,0 +1,61 @@
+
+vlan 100
+ name Data_100
+!
+vlan 201
+ name Data_201
+!
+vlan 203
+ name Data_203
+!
+vlan 204
+ name Data_204
+!
+vlan 300
+ name Server_300
+!
+vlan 301
+ name Server_301
+!         
+vlan 310
+ name Server_310
+!
+vlan 320
+ name Server_320
+!
+vlan 351
+ name Server_351
+!
+vlan 352
+ name Server_352
+!
+interface Vlan100
+ ip address 10.0.100.1 255.255.255.0
+!
+interface Vlan201
+ ip address 10.0.200.254 255.255.255.0
+!
+interface Vlan203
+ ip address 10.0.203.1 255.255.255.0
+!
+interface Vlan204
+ ip address 10.0.204.1 255.255.255.0
+!
+interface Vlan300
+ ip address 10.10.0.128 255.255.255.0
+!
+interface Vlan301
+ ip address 10.10.1.1 255.255.255.0
+!
+interface Vlan310
+ ip address 10.10.10.1 255.255.255.0
+!
+interface Vlan320
+ ip address 10.10.20.126 255.255.255.128
+!
+interface Vlan351
+ ip address 10.10.51.126 255.255.255.128
+!
+interface Vlan352
+ ip address 10.10.52.126 255.255.255.128
+!
