@@ -9,5 +9,7 @@ The following examples are included in this repository:
 * [Cisco NX-API on Nexus 5500](https://codingnetworker.com/2015/09/cisco-nx-api-nexus-5500/) - This post gives you a short introduction to the Cisco NX-API on Nexus 5500 with NX-OS 7.2
 * [Custom filters for a Jinja2 based config generator](https://codingnetworker.com/2015/10/custom-filters-jinja2-config-generator/) - In this post, I'll explain how to include custom filters in Jinja2 and how to use them within the configuration templates
 * [Implement HSRP using ciscoconfparse](https://codingnetworker.com/2015/10/implement-hsrp-using-ciscoconfparse/) - This post describes an example to create a configuration for HSRP based on an existing Cisco IOS configuration using the ciscoconfparse module
+* [python dictionaries and JSON (crash course)](https://codingnetworker.com/2015/10/python-dictionaries-json-crash-course/) - Just a quick crash course about the use of python dictionaries and the JSON data format
+* [HTTP calls using the python requests library](https://codingnetworker.com/2015/10/http-calls-using-python-requests-library/) - How to use the requests library in python based on the example code from the Cisco NX-API post ("interface description cleaner")
 
 In the post [about Vagrant](https://codingnetworker.com/2015/09/use-vagrant-to-run-the-python-examples/) you can find a description how to execute the examples without affecting your current environment.
