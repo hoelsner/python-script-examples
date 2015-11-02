@@ -11,5 +11,6 @@ The following examples are included in this repository:
 * [Implement HSRP using ciscoconfparse](https://codingnetworker.com/2015/10/implement-hsrp-using-ciscoconfparse/) - This post describes an example to create a configuration for HSRP based on an existing Cisco IOS configuration using the ciscoconfparse module
 * [python dictionaries and JSON (crash course)](https://codingnetworker.com/2015/10/python-dictionaries-json-crash-course/) - Just a quick crash course about the use of python dictionaries and the JSON data format
 * [HTTP calls using the python requests library](https://codingnetworker.com/2015/10/http-calls-using-python-requests-library/) - How to use the requests library in python based on the example code from the Cisco NX-API post ("interface description cleaner")
+* [Reconfigure static ARP entries using ciscoconfparse](https://codingnetworker.com/2015/11/reconfigure-static-arp-entries-ciscoconfparse/) - This post describes how to parse an existing configuration and reconfigure it using the example of static ARP entries (from Cisco VSS to Cisco vPC)
 
 In the post [about Vagrant](https://codingnetworker.com/2015/09/use-vagrant-to-run-the-python-examples/) you can find a description how to execute the examples without affecting your current environment.
