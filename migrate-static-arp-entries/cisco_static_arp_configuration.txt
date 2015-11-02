@@ -1,0 +1,27 @@
+!
+interface Vlan100
+ ip address 10.0.100.1 255.255.255.0
+!
+interface Vlan101
+ ip address 10.0.101.254 255.255.255.0
+!
+interface Vlan102
+ ip address 10.0.102.1 255.255.255.128
+!
+interface Vlan103
+ ip address 10.0.103.1 255.255.255.128
+!
+arp 10.0.100.80 0100.5e7f.9271 ARPA
+arp 10.0.100.105 0100.5e7f.8a64 ARPA
+arp 10.0.100.109 0100.5e7f.8ef0 ARPA
+arp 10.0.100.12 0100.5e7f.8964 ARPA
+arp 10.0.101.124 0100.5e7f.907b ARPA
+arp 10.0.101.122 0100.5e7f.9b72 ARPA
+arp 10.0.102.168 0100.5e7f.835a ARPA
+arp 10.0.102.116 0100.5e7f.9b79 ARPA
+arp 10.0.102.110 0100.5e7f.8e65 ARPA
+arp 10.0.103.105 0100.5e7f.8162 ARPA
+arp 10.0.103.203 0100.5e7f.826b ARPA
+arp 10.0.103.123 0100.5e7f.987e ARPA
+arp 10.0.103.123 0100.5e7f.9a7c ARPA
+!
