@@ -122,4 +122,6 @@ target/
 
 outfile.csv
 _*
+!__init__.py
+/**/.ipynb_checkpoints
 .vagrant
