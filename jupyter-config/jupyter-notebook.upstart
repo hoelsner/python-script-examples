@@ -1,0 +1,19 @@
+description "Jupyter Upstart script"
+
+start on filesystem or runlevel [2345]
+stop on shutdown
+
+script
+    export HOME="/home/vagrant/" cd $HOME
+    echo $$ > /var/run/jupyter_start.pid
+    exec jupyter-notebook --config='/home/vagrant/.jupyter/jupyter_notebook.config.py'
+end script
+
+pre-start script
+    echo "[`date`] Starting Jupyter Notebook Server" >> /var/log/jupyter-ntb.log
+end script
+
+pre-stop script
+    rm /var/run/ipython_start.pid
+    echo "[`date`] Stopping Jupyter Notebook" >> /var/jupyter/Jupyter-ntb.log
+end script

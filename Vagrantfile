@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 8888, host: 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -56,5 +56,5 @@ Vagrant.configure(2) do |config|
     inline: "sudo apt-get install ansible -y && ansible-playbook -i 'localhost,' -c local /vagrant/setup.yaml",
     keep_color: true
 
-  config.vm.post_up_message = "access the machine using the 'vagrant ssh' command or connect to 127.0.0.1:2222 via SSH"
+  config.vm.post_up_message = "access the machine using SSH using port 2222 or with the URL 'http://localhost:8080'"
 end

@@ -10,6 +10,9 @@
          - python3-pip
          - ansible
          - git
+         - build-essential
+         - python3-dev
+
   # clone python3 compatible textfsm-fork
   - name: clone textfsm repository form Github
     git: repo=https://github.com/jonathanslenders/textfsm.git dest=/home/vagrant/github/textfsm accept_hostkey=yes
@@ -20,6 +23,30 @@
   - name: install other python requirements form the examples repository
     sudo: true
     pip: requirements=/vagrant/requirements.txt executable=pip3
+
   # create a symlink in the home directory to the shared directory
-  - name: create 'example' link
+  - name: create 'examples' link
     file: src=/vagrant dest=/home/vagrant/examples owner=vagrant group=vagrant state=link
+
+  # setup the jupyter notebook service
+  - name: ensure that the .jupyter directory exists
+    file: path=/home/vagrant/.jupyter state=directory
+  - name: create 'notebooks' link in the home directory
+    file: src=/vagrant/notebooks dest=/home/vagrant/notebooks owner=vagrant group=vagrant state=link
+  - name: copy jupyter notebook configuration file
+    copy: src=jupyter-config/jupyter_notebook_config.py dest=/home/vagrant/.jupyter/jupyter_notebook.config.py force=yes
+  - name: link about notebook
+    file: src=/vagrant/jupyter-config/about.ipynb dest=/home/vagrant/about.ipynb owner=vagrant group=vagrant state=link
+
+  # add startup script to enable the import notebook function
+  - name: verify that the profile directory exists
+    sudo: true
+    file: path=/home/vagrant/.ipython/profile_default/startup state=directory
+  - name: copy notebook import as startup script
+    copy: src=jupyter-config/10-nb-import-hook.py dest=/home/vagrant/.ipython/profile_default/startup/10-nb-import-hook.py force=yes
+
+  # install jupyter notebook as a service
+  - name: copy jupyter upstart script
+    copy: src=jupyter-config/jupyter-notebook.upstart dest=/etc/init/jupyter-notebook.conf force=yes
+  - name: start jupyter service
+    service: name=jupyter-notebook state=restarted enabled=yes
