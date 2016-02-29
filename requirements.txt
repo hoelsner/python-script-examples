@@ -6,3 +6,4 @@ python-slugify
 psutil
 jupyter
 ciscoconfparse
+netmiko

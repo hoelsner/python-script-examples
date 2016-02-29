@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network - show CDP neighbor details</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <!-- The required CSS files are loaded from CDN's -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.15.0/vis.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.15.0/vis.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- data.js that contains the results of the python script -->
+    <script type="text/javascript" src="data.js"></script>
+
+    <style type="text/css">
+        #mynetwork {
+            width: 90vw;
+            height: 90vh;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body id="mynetwork">
+<script type="text/javascript">
+    // create a network
+    var container = document.getElementById('mynetwork');
+
+    // provide the network nodes and edges in the format that is required for vis.js
+    var data = {
+        nodes: data.nodes,
+        edges: data.edges
+    };
+
+    // set vis.js options
+    var options = {
+        groups:{
+            useDefaultGroups: true,
+            root_device: {
+                value: 2,
+                shape: "icon",
+                icon: {
+                    face: 'FontAwesome',
+                    code: '\uf1ad',
+                    size: 50,
+                    color: "#000000"
+                }
+            },
+            attached_device: {
+                color: "lightgrey",
+                value: 1,
+                shape: "icon",
+                icon: {
+                    face: 'FontAwesome',
+                    code: '\uf1ad',
+                    size: 50,
+                    color: "#000000"
+                }
+            }
+        },
+        nodes: {
+            shadow:true
+        },
+        edges: {
+            smooth: {
+                type: 'cubicBezier',
+                forceDirection: 'horizontal',
+                roundness: 0.4
+            },
+            shadow:true
+        },
+        interaction: {
+            selectable: false,
+            tooltipDelay: 100
+        },
+        layout: {
+            hierarchical: {
+                enabled: true,
+                direction: "LR",
+                levelSeparation: 400,
+                nodeSpacing: 100,
+                treeSpacing: 300
+            }
+        },
+        physics:false
+    };
+
+    // create the network object
+    var network = new vis.Network(container, data, options);
+</script>
+</body>
+</html>
