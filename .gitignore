@@ -125,3 +125,4 @@ _*
 !__init__.py
 /**/.ipynb_checkpoints
 .vagrant
+automate-ssh-with-netmiko/data.js
