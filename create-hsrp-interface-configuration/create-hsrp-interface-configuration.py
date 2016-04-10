@@ -1,6 +1,6 @@
 import os
 import sys
-from ipaddress import IPv4Network
+from ipaddress import IPv4Network, IPv4Interface, IPv4Address
 from ciscoconfparse import CiscoConfParse
 from ciscoconfparse.ccp_util import IPv4Obj
 
@@ -63,12 +63,38 @@ if __name__ == "__main__":
             primary_ip = ipv4_addr.ip_object - 1
             secondary_ip = ipv4_addr.ip_object - 2
 
+        # check for secondary IPv4 addresses
+        add_ip_addresses = []
+        secondary_ipv4_address_lines = vlan_interface.re_search_children(r"^ ip address .* secondary$")
+        for sec_ipv4_cmd in secondary_ipv4_address_lines:
+            # another way to convert the ip address command
+            sec_ipv4_addr = sec_ipv4_cmd.text[len(" ip address "):]
+            sec_ipv4_addr = sec_ipv4_addr.rstrip(" secondary")
+            sec_ipv4_addr = sec_ipv4_addr.replace(" ", "/")
+
+            # convert it to an IPv4Interface object from the ipaddresss module
+            ip_address = IPv4Interface(sec_ipv4_addr)
+
+            # store it for later processing
+            add_ip_addresses.append(ip_address)
+
         # now add the configuration to the change scripts
         primary_config.append_line("interface %s" % vlan_interface_string)
         primary_config.append_line(" description *** VLAN SVI %s" % vlan_id)
         primary_config.append_line(" ip address %s %s" % (primary_ip, ipv4_addr.netmask))
+        for ipv4_address in add_ip_addresses:
+            # determine primary IP address
+            if IPv4Address(ipv4_address.ip + 1) in ipv4_address.network.hosts():
+                primary_ip = ipv4_address + 1
+            else:
+                primary_ip = ipv4_address - 1
+            primary_config.append_line(" ip address %s %s secondary" % (primary_ip.ip, ipv4_address.netmask))
+
         primary_config.append_line(" standby version 2")
         primary_config.append_line(" standby 1 ip %s" % virtual_ip)
+        for ipv4_address in add_ip_addresses:
+            primary_config.append_line(" standby 1 ip %s secondary" % ipv4_address.ip)
+
         primary_config.append_line(" standby 1 priority 255")
         primary_config.append_line(" standby 1 authentication md5 key-string vl%s" % vlan_id)
         primary_config.append_line("!")
@@ -76,8 +102,19 @@ if __name__ == "__main__":
         secondary_config.append_line("interface %s" % vlan_interface_string)
         secondary_config.append_line(" description *** VLAN SVI %s" % vlan_id)
         secondary_config.append_line(" ip address %s %s" % (secondary_ip, ipv4_addr.netmask))
+        for ipv4_address in add_ip_addresses:
+            # determine secondary IP address
+            if IPv4Address(ipv4_address.ip + 2) in ipv4_address.network.hosts():
+                secondary_ip = ipv4_address + 2
+            else:
+                secondary_ip = ipv4_address - 2
+            secondary_config.append_line(" ip address %s %s secondary" % (secondary_ip.ip, ipv4_address.netmask))
+
         secondary_config.append_line(" standby version 2")
         secondary_config.append_line(" standby 1 ip %s" % virtual_ip)
+        for ipv4_address in add_ip_addresses:
+            secondary_config.append_line(" standby 1 ip %s secondary" % ipv4_address.ip)
+
         secondary_config.append_line(" standby 1 priority 254")
         secondary_config.append_line(" standby 1 authentication md5 key-string vl%s" % vlan_id)
         secondary_config.append_line("!")

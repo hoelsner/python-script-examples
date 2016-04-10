@@ -31,9 +31,17 @@ vlan 352
 !
 interface Vlan100
  ip address 10.0.100.1 255.255.255.0
+ ip address 10.1.100.1 255.255.255.0 secondary
+ ip address 10.2.100.1 255.255.255.0 secondary
+ ip address 10.3.100.1 255.255.255.0 secondary
+ ip address 10.4.100.1 255.255.255.0 secondary
 !
 interface Vlan201
  ip address 10.0.200.254 255.255.255.0
+ ip address 10.1.200.254 255.255.255.0 secondary
+ ip address 10.2.200.254 255.255.255.0 secondary
+ ip address 10.3.200.254 255.255.255.0 secondary
+ ip address 10.4.200.254 255.255.255.0 secondary
 !
 interface Vlan203
  ip address 10.0.203.1 255.255.255.0
