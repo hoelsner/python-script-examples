@@ -1,0 +1,46 @@
+!
+hostname my-example-switch
+!
+!
+vlan 200
+ name Segment_A
+!
+vlan 200
+ name Segment_B
+!
+interface Loopback0
+ description Management IP address
+ ip address 1.1.1.1 255.255.255.255
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan200
+ ip address 10.1.1.1 255.255.255.0
+ ip helper-address 10.254.0.100
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+!
+interface Vlan300
+ description vlan 300 interface (no ospf neighbors)
+ ip address 10.2.2.1 255.255.255.0
+ no ip redirects
+ no ip unreachables
+ no ip proxy-arp
+!
+interface FastEthernet1/1
+ no switchport
+ description routed port Fa1/1
+ ip address 10.3.3.1 255.255.255.0
+!
+router ospf 1
+ router-id 1.1.1.1
+ log-adjacency-changes detail
+ auto-cost reference-bandwidth 100000
+ passive-interface Vlan300
+ network 10.1.1.1 0.0.0.0 area 0
+ network 10.2.2.1 0.0.0.0 area 0
+ default-information originate
+!
+!
