@@ -1,6 +1,6 @@
 Jinja2
 MarkupSafe
-textfsm
+jtextfsm
 requests
 python-slugify
 psutil

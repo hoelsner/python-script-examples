@@ -1,4 +1,5 @@
-import textfsm
+import jtextfsm as textfsm
+
 # Load the input file to a variable
 input_file = open("show_inventory.txt", encoding='utf-8')
 raw_text_data = input_file.read()

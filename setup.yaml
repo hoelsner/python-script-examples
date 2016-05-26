@@ -13,15 +13,10 @@
          - git
          - build-essential
          - python3-dev
+         - libssl-dev
+         - libffi-dev
 
-  # clone python3 compatible textfsm-fork
-  - name: clone textfsm repository form Github
-    git: repo=https://github.com/jonathanslenders/textfsm.git dest=/home/vagrant/github/textfsm accept_hostkey=yes
-  - name: install textfsm
-    shell: python3 setup.py install
-      chdir=/home/vagrant/github/textfsm
-    sudo: true
-  - name: install other python requirements form the examples repository
+  - name: install required python dependencies
     sudo: true
     pip: requirements=/vagrant/requirements.txt executable=pip3
 
