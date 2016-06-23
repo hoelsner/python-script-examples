@@ -1,6 +1,7 @@
 # python script examples
 
-This repository contains my python script examples, which are explained in more detail at the [Coding Networker Blog](https://codingnetworker.com).
+This repository contains my python script examples that focuses on use cases for Network Engineers. They are explained
+in more detail in the associated Blog posts at the [Coding Networker Blog](https://codingnetworker.com).
 
 The following examples are included in this repository:
 
@@ -19,5 +20,6 @@ The following examples are included in this repository:
 * [Introduction to the python ipaddress module](https://codingnetworker.com/2015/12/introduction-python-ipaddress-module/) - quick introduction to the python ipaddress module
 * [Automate SSH connections with netmiko](https://codingnetworker.com/2016/03/automate-ssh-connections-with-netmiko/) - automate SSH connection with netmiko and visualize the results using HTML, CSS and Javascript
 * [Parse Cisco IOS configurations with RegEx ](https://codingnetworker.com/2016/05/parse-cisco-ios-configurations-regex/) - some basic examples how to parse Cisco IOS configuration using regular expressions
+* [Parse Cisco IOS configuration using ciscoconfparse](https://codingnetworker.com/2016/06/parse-cisco-ios-configuration-ciscoconfparse/) - examples how to parse Cisco IOS configuration using ciscoconfparse (follow up to the last post)
 
 In the post [about Vagrant](https://codingnetworker.com/2015/09/use-vagrant-to-run-the-python-examples/), I'll explain how to execute the examples within a virtual machine. This Vagrant VM also contains a pre-configured Jupyter environment, which is described in more detail in the post about [Jupyter: an interactive web-based python shell](https://codingnetworker.com/2015/11/jupyter-interactive-web-based-python-shell/).
