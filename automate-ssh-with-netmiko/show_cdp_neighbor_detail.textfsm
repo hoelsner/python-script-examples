@@ -11,7 +11,7 @@ Start
   ^Device ID: ${dest_host}
   ^Entry address\(es\): -> ParseIP
   ^Platform: ${platform},
-  ^Interface: ${remote_port},  Port ID \(outgoing port\): ${local_port}
+  ^Interface: ${local_port},  Port ID \(outgoing port\): ${remote_port}
   ^Version : -> GetVersion
 
 ParseIP

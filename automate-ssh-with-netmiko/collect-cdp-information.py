@@ -107,7 +107,7 @@ if __name__ == "__main__":
                 edge = {
                     "from": 1,
                     "to": counter,
-                    "title": "from: %s<br>to: %s" % (e[4], e[5]),
+                    "title": "from: %s<br>to: %s" % (e[5], e[4]),
                     "label": "",
                     "value": 0,
                     "font": {
