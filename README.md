@@ -21,5 +21,6 @@ The following examples are included in this repository:
 * [Automate SSH connections with netmiko](https://codingnetworker.com/2016/03/automate-ssh-connections-with-netmiko/) - automate SSH connection with netmiko and visualize the results using HTML, CSS and Javascript
 * [Parse Cisco IOS configurations with RegEx ](https://codingnetworker.com/2016/05/parse-cisco-ios-configurations-regex/) - some basic examples how to parse Cisco IOS configuration using regular expressions
 * [Parse Cisco IOS configuration using ciscoconfparse](https://codingnetworker.com/2016/06/parse-cisco-ios-configuration-ciscoconfparse/) - examples how to parse Cisco IOS configuration using ciscoconfparse (follow up to the last post)
+* [Extract CLI commands from Session Logs](https://codingnetworker.com/2016/08/extract-cli-commands-session-logs/) - short script to split multiple CLI commands and outputs from multiple text files (e.g. putty session logs)
 
 In the post [about Vagrant](https://codingnetworker.com/2015/09/use-vagrant-to-run-the-python-examples/), I'll explain how to execute the examples within a virtual machine. This Vagrant VM also contains a pre-configured Jupyter environment, which is described in more detail in the post about [Jupyter: an interactive web-based python shell](https://codingnetworker.com/2015/11/jupyter-interactive-web-based-python-shell/).
