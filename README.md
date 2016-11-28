@@ -23,5 +23,6 @@ The following examples are included in this repository:
 * [Parse Cisco IOS configuration using ciscoconfparse](https://codingnetworker.com/2016/06/parse-cisco-ios-configuration-ciscoconfparse/) - examples how to parse Cisco IOS configuration using ciscoconfparse (follow up to the last post)
 * [Extract CLI commands from Session Logs](https://codingnetworker.com/2016/08/extract-cli-commands-session-logs/) - short script to split multiple CLI commands and outputs from multiple text files (e.g. putty session logs)
 * [Pandas DataFrame 101](https://codingnetworker.com/2016/09/pandas-dataframes-101/) - introduction to pandas DataFrames
+* [Merge DataFrames in Pandas](https://codingnetworker.com/2016/11/merge-dataframes-pandas/) - how to merge pandas DataFrames based on an example using Excel
 
 In the post [about Vagrant](https://codingnetworker.com/2015/09/use-vagrant-to-run-the-python-examples/), I'll explain how to execute the examples within a virtual machine. This Vagrant VM also contains a pre-configured Jupyter environment, which is described in more detail in the post about [Jupyter: an interactive web-based python shell](https://codingnetworker.com/2015/11/jupyter-interactive-web-based-python-shell/).
