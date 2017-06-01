@@ -124,7 +124,7 @@ def interface_shortener(interface_name):
         { "from": "Ethernet", "to": "Eth"},
         { "from": "GigabitEthernet", "to": "Gi"},
         { "from": "FastEthernet", "to": "Fa"},
-        { "from": "TenGigabirEthernet", "to": "Te"},
+        { "from": "TenGigabitEthernet", "to": "Te"},
     ]
     result = interface_name
     for s in interface_short_string_map:
@@ -151,6 +151,10 @@ if __name__ == "__main__":
         neighbor_statements = result['result']['body']['TABLE_cdp_neighbor_detail_info']['ROW_cdp_neighbor_detail_info']
 
         host_neighbors = list()
+
+        if type(neighbor_statements) is not list:
+            # convert to a list if only a single entry in a dictionary is received from the device
+            neighbor_statements = [neighbor_statements]
 
         for neighbor in neighbor_statements:
             # remove SN and/or DNS prefix from hostname
