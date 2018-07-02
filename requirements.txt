@@ -12,3 +12,4 @@ pandas
 lxml
 BeautifulSoup4
 html5lib
+networkconfgen
