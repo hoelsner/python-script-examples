@@ -13,7 +13,7 @@ The following examples are included in this repository:
 * **JSON data structure**
 
     * [python dictionaries and JSON (crash course)](https://codingnetworker.com/2015/10/python-dictionaries-json-crash-course/) - Just a quick crash course about the use of python dictionaries and the JSON data format
-    * [Validating JSON data using cerberus](https://codingnetworker.com/2016/03/validate-json-data-using-cerberus/) - In this post, I'll look at a way to verify JSON data using cerberus 
+    * [Validating JSON data using cerberus](https://codingnetworker.com/2016/03/validate-json-data-using-cerberus/) - In this post, I'll look at a way to verify JSON data using cerberus
 
 * [HTTP calls using the python requests library](https://codingnetworker.com/2015/10/http-calls-using-python-requests-library/) - How to use the requests library in python based on the example code from the Cisco NX-API post ("interface description cleaner")
 * [Reconfigure static ARP entries using ciscoconfparse](https://codingnetworker.com/2015/11/reconfigure-static-arp-entries-ciscoconfparse/) - This post describes how to parse an existing configuration and reconfigure it using the example of static ARP entries (from Cisco VSS to Cisco vPC)
@@ -24,5 +24,6 @@ The following examples are included in this repository:
 * [Extract CLI commands from Session Logs](https://codingnetworker.com/2016/08/extract-cli-commands-session-logs/) - short script to split multiple CLI commands and outputs from multiple text files (e.g. putty session logs)
 * [Pandas DataFrame 101](https://codingnetworker.com/2016/09/pandas-dataframes-101/) - introduction to pandas DataFrames
 * [Merge DataFrames in Pandas](https://codingnetworker.com/2016/11/merge-dataframes-pandas/) - how to merge pandas DataFrames based on an example using Excel
+* [Reliable Config Generation with Python](https://codingnetworker.com/2018/07/reliable-config-generation-with-python/) - wrapper around the Jinja2 environment that provides several filters for network configuration templates and a content error check functionality
 
 In the post [about Vagrant](https://codingnetworker.com/2015/09/use-vagrant-to-run-the-python-examples/), I'll explain how to execute the examples within a virtual machine. This Vagrant VM also contains a pre-configured Jupyter environment, which is described in more detail in the post about [Jupyter: an interactive web-based python shell](https://codingnetworker.com/2015/11/jupyter-interactive-web-based-python-shell/).
